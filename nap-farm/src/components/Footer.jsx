@@ -32,8 +32,8 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-3">Contact</h4>
           <ul className="space-y-2">
-            <li>Email: support@poultrystore.com</li>
-            <li>Phone: +234 000 0000</li>
+            <li>Email: support@pnapfarm.com</li>
+            <li>Phone: +237865555555</li>
           </ul>
         </div>
 
