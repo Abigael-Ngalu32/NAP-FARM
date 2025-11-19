@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="bg-yellow-500 p-4 shadow relative">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl text-white font-bold">PoultryHelp</h1>
+        <h1 className="text-2xl text-white font-bold">Nap Farm</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 text-white font-semibold">
