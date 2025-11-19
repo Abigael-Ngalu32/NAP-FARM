@@ -1,32 +1,18 @@
-import { useState } from "react";
-import { breeds } from "../data/breeds";
+import React from "react";
 import BreedCard from "./BreedCard";
-import CategoryTabs from "./CategoryTabs";
+import { breeds } from "../data/breeds"; // adjust path if needed
 
-export default function BreedGrid() {
-  const categories = ["All", "Layers", "Broilers", "Dual Purpose", "Heritage", "Exotic"];
-  const [current, setCurrent] = useState("All");
-
-  const filtered =
-    current === "All"
-      ? breeds
-      : breeds.filter((b) => b.category === current);
-
+const BreedGrid = () => {
   return (
-    <section className="p-6">
-      <h2 className="text-3xl font-bold text-center">Chicken Breeds</h2>
-
-      <CategoryTabs
-        categories={categories}
-        active={current}
-        onChange={setCurrent}
-      />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-        {filtered.map((b) => (
-          <BreedCard key={b.id} breed={b} />
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6 text-center">Our Chicken Breeds</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {breeds.map((breed) => (
+          <BreedCard key={breed.id} breed={breed} />
         ))}
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default BreedGrid;

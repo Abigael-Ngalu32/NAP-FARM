@@ -1,30 +1,21 @@
-import { useCart } from "./CartContext";
+import React from "react";
 
-export default function BreedCard({ breed }) {
-  const { addToCart } = useCart();
-
+const BreedCard = ({ breed }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 hover:scale-105 duration-200">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <img
         src={breed.image}
         alt={breed.name}
-        className="w-full h-48 object-cover rounded"
+        className="w-full h-48 object-cover"
       />
-
-      <h3 className="text-xl font-bold mt-2">{breed.name}</h3>
-
-      <p className="text-gray-600 text-sm mt-1">{breed.description}</p>
-
-      <p className="text-green-600 font-bold mt-3">
-        KES {breed.price.toLocaleString()}
-      </p>
-
-      <button
-        onClick={() => addToCart(breed)}
-        className="mt-3 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
-      >
-        Add to Cart
-      </button>
+      <div className="p-4">
+        <h2 className="text-xl font-semibold mb-2">{breed.name}</h2>
+        <p className="text-gray-600 mb-1">{breed.category}</p>
+        <p className="text-green-600 font-bold mb-2">${breed.price}</p>
+        <p className="text-gray-700 text-sm">{breed.description}</p>
+      </div>
     </div>
   );
-}
+};
+
+export default BreedCard;
