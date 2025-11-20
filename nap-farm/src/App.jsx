@@ -1,10 +1,9 @@
-import Home from "./pages/Home";
-import { CartProvider } from "./components/CartContext";
-
 export default function App() {
   return (
-    <CartProvider>
-      <Home />
-    </CartProvider>
+    <div className="text-3xl text-center mt-20 text-green-600">
+      If you see this, App is working!
+    </div>
   );
 }
+
+
