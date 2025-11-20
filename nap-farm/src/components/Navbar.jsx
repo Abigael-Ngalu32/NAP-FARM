@@ -6,6 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const menuItems = ["Home", "Breeds", "About", "Contact"];
 
   return (
     <nav className="bg-yellow-500 p-4 shadow relative">
@@ -15,10 +16,11 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 text-white font-semibold">
-          <li>Home</li>
-          <li>Breeds</li>
-          <li>About</li>
-          <li>Contact</li>
+          {menuItems.map((item) => (
+            <li key={item} className="cursor-pointer hover:text-yellow-200 transition">
+              {item}
+            </li>
+          ))}
         </ul>
 
         {/* Cart & Hamburger */}
@@ -27,6 +29,7 @@ export default function Navbar() {
 
           {/* Hamburger Icon */}
           <button
+            aria-label="Toggle menu"
             className="md:hidden text-white focus:outline-none"
             onClick={toggleMenu}
           >
@@ -67,13 +70,20 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden bg-yellow-400 text-white font-semibold flex flex-col gap-4 p-4 absolute w-full left-0 top-full shadow-lg">
-          <li onClick={() => setIsOpen(false)}>Home</li>
-          <li onClick={() => setIsOpen(false)}>Breeds</li>
-          <li onClick={() => setIsOpen(false)}>About</li>
-          <li onClick={() => setIsOpen(false)}>Contact</li>
+        <ul className="md:hidden bg-yellow-400 text-white font-semibold flex flex-col gap-4 p-4 absolute w-full left-0 top-full shadow-lg transition-all duration-300 ease-in-out">
+          {menuItems.map((item) => (
+            <li
+              key={item}
+              onClick={() => setIsOpen(false)}
+              className="cursor-pointer hover:text-yellow-200 transition"
+            >
+              {item}
+            </li>
+          ))}
         </ul>
       )}
     </nav>
   );
 }
+
+
