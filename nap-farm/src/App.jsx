@@ -1,11 +1,13 @@
-export default function App() {
-  return (
-    <div className="text-3xl text-center mt-20 text-green-600">
-      Hello from Nap Farm 🐔
-    </div>
-  );
+import React from "react";
+import "./App.css";
+
+import Home from "./pages/Home";
+
+function App() {
+  return <Home />;
 }
 
+export default App;
 
 
 
