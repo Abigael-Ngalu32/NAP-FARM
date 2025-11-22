@@ -1,4 +1,4 @@
-import { breeds } from "../data/breeds";
+import breeds from "../data/breeds";
 import BreedCard from "./BreedCard"; // Make sure this is imported
 
 const BreedGrid = () => {
